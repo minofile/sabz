@@ -1,17 +1,15 @@
 workflows:
   android-workflow:
-    name: SabzTar Android Build
-    max_build_duration: 60
+    name: SabzTar APK
 
     environment:
-      android_signing:
-        - sabztar_keystore
-      vars:
-        PACKAGE_NAME: "com.sabztar.app"
+      android:
+        min_sdk_version: 24
 
     scripts:
-      - name: Build APK
+      - name: Build Debug APK
         script: |
+          chmod +x gradlew
           ./gradlew assembleDebug
 
     artifacts:
