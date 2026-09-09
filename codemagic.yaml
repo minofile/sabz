@@ -1,15 +1,10 @@
 workflows:
   android-workflow:
-    name: SabzTar APK
-
-    environment:
-      android:
-        min_sdk_version: 24
+    name: SabzTar APK Build
 
     scripts:
-      - name: Build Debug APK
+      - name: Build APK
         script: |
-          chmod +x gradlew
           ./gradlew assembleDebug
 
     artifacts:
